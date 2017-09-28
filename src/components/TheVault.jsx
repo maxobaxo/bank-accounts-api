@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateAccount from './CreateAccount';
+import CreateAccountForm from './CreateAccountForm';
 import DisplayAccounts from './DisplayAccounts';
 
 class TheVault extends React.Component {
@@ -10,8 +10,10 @@ class TheVault extends React.Component {
   render() {
 
     return(
-      <CreateAccount />
-      <DisplayAccounts />
+      <div>
+        <CreateAccountForm submit={this.handleNewAccountSubmit}/>
+        <DisplayAccounts />
+      </div>
     )
   }
 }
