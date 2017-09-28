@@ -6,7 +6,7 @@ function DisplayAccounts(props) {
   console.log(props);
   return(
     <div>
-      {props.accountList.map((account, index) =>
+      {props.createdAccountList.map((account, index) =>
         <Account
           owner={account.signatory}
           type={account.account_type}
@@ -21,7 +21,7 @@ function DisplayAccounts(props) {
 }
 
 DisplayAccounts.propTypes = {
-  accountList: PropTypes.array
+  createdAccountList: PropTypes.array
 }
 
 export default DisplayAccounts;

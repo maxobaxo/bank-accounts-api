@@ -17,3 +17,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('react-app-root')
 );
+
+export default store;

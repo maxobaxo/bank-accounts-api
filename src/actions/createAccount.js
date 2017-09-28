@@ -1,11 +1,10 @@
-import { CREATE_ACCOUNT } from './../constants';
-import { RECEIVE_CREATED_ACCOUNT } from './../constants';
+import c from './../constants';
 import fetch from 'isomorphic-fetch';
 import apiKey from './../../api.config';
 import v4 from 'uuid/v4';
 
 export const requestCreateAccount = (description, routing_number, account_number, signatory, account_type, localAccountId) => ({
-  type: CREATE_ACCOUNT,
+  type: c.CREATE_ACCOUNT,
   description,
   routing_number,
   account_number,
@@ -15,7 +14,7 @@ export const requestCreateAccount = (description, routing_number, account_number
 });
 
 export const receiveCreateAccount = (created_account, localAccountId) => ({
-  type: RECEIVE_CREATED_ACCOUNT,
+  type: c.RECEIVE_CREATED_ACCOUNT,
   created_account,
   localAccountId
 });
@@ -44,7 +43,6 @@ export function postNewAccount(description, account_type, account_number, routin
     ).then(function(json) {
       console.log(json);
       dispatch(receiveCreateAccount(json, localAccountId));
-      console.log('We were unable to create a new account.');
     });
   }
 }

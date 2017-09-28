@@ -1,5 +1,6 @@
 import React from 'react';
-import { postNewAccount } from './../actions';
+import { postNewAccount } from './../actions/createAccount';
+import { getAllAccounts } from './../actions/getAllAccounts';
 import { connect } from 'react-redux';
 
 class CreateAccount extends React.Component {
@@ -7,6 +8,13 @@ class CreateAccount extends React.Component {
   constructor(props) {
     super(props);
     this.createAccount = this.createAccount.bind(this);
+    this.getSavedAccounts = this.getSavedAccounts.bind(this);
+  }
+
+  getSavedAccounts(event) {
+    event.preventDefault();
+    const { dispatch } = this.props;
+    dispatch(getAllAccounts());
   }
 
   createAccount(event) {
@@ -23,6 +31,7 @@ class CreateAccount extends React.Component {
   render() {
     return(
       <div>
+        <button onClick={this.getSavedAccounts}>View All Saved Accounts</button>
         <form onSubmit={this.createAccount}>
           <input ref="_description" placeholder=" Description"/>
           <select ref="_account_type">

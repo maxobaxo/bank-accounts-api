@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateAccountForm from './CreateAccountForm';
 import DisplayAccounts from './DisplayAccounts';
+import ViewAllAccounts from './ViewAllAccounts';
 import { connect } from 'react-redux';
 
 class TheVault extends React.Component {
@@ -8,12 +9,18 @@ class TheVault extends React.Component {
     super(props);
   }
 
+
+
   render() {
 
     return(
       <div>
         <CreateAccountForm submit={this.handleNewAccountSubmit}/>
-        <DisplayAccounts accountList={this.props.masterState.createAccountReducer}/>
+        <DisplayAccounts createdAccountList={this.props.masterState.createAccountReducer}/>
+        <ViewAllAccounts
+          accountList={this.props.masterState.getAllAcountsReducer}
+          getAccounts={this.getSavedAccounts}
+        />
       </div>
     )
   }
