@@ -28,8 +28,6 @@ export default (state = [], action) => {
       }
       let newState = state.slice();
       for (var i = 0; i < state.length; i++) {
-        console.log(newState[i].account_id);
-        console.log(localAccountId)
         if (newState[i].account_id === localAccountId) {
           newState[i] = updatedAccount;
         }

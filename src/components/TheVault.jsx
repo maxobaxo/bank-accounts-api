@@ -13,14 +13,13 @@ class TheVault extends React.Component {
     return(
       <div>
         <CreateAccountForm submit={this.handleNewAccountSubmit}/>
-        <DisplayAccounts />
+        <DisplayAccounts accountList={this.props.masterState.createAccountReducer}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     masterState: state
   }

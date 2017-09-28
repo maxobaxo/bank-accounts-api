@@ -15,6 +15,8 @@ class CreateAccount extends React.Component {
     const { dispatch } = this.props;
 
     dispatch(postNewAccount(_description.value, _account_type.value, "123456789", "322271627", _signatory.value));
+    _description.value = '';
+    _signatory.value = '';
   }
 
 
