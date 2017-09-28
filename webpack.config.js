@@ -1,17 +1,17 @@
 const webpack = require('webpack');
-const resolve = require('path');
+const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
-    resolve(__dirname, src, 'index.jsx')
+    resolve(__dirname, 'src', 'index.jsx')
   ],
 
   output: {
     filename: 'app.bundle.js',
-    path: resolve(__dirname, build),
+    path: resolve(__dirname, 'build'),
     publicPath: '/'
   },
 
@@ -31,6 +31,7 @@ module.exports = {
     rules: [
       {
         test:/\.jsx?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
           presets: [
