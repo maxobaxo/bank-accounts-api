@@ -16,7 +16,8 @@ export const requestCreateAccount = (description, routing_number, account_number
 
 export const receiveCreateAccount = (created_account, localAccountId) => ({
   type: RECEIVE_CREATED_ACCOUNT,
-  created_account
+  created_account,
+  localAccountId
 });
 
 export function postNewAccount(description, account_type, account_number, routing_number, signatory, dispatch) {

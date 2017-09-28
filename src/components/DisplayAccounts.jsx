@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function DisplayAccounts(props) {
 
@@ -7,6 +8,10 @@ function DisplayAccounts(props) {
 
     </div>
   )
+}
+
+DisplayAccounts.propTypes = {
+  
 }
 
 export default DisplayAccounts;

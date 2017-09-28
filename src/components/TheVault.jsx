@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateAccountForm from './CreateAccountForm';
 import DisplayAccounts from './DisplayAccounts';
+import { connect } from 'react-redux';
 
 class TheVault extends React.Component {
   constructor(props) {
@@ -18,4 +19,11 @@ class TheVault extends React.Component {
   }
 }
 
-export default TheVault;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    masterState: state
+  }
+}
+
+export default connect(mapStateToProps)(TheVault);
